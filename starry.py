@@ -17,7 +17,7 @@ class starry():
             if i == "%"   : s[-2:] = [s[-2]%s[-1]] #merge 2 last elements with modulus
             if i == "in"  : s.append(int(input()) if a % 2 == 0 else ord(input())) #read input and convert to ASCII if needed
             if i == "out" : print(int(s.pop()) if a % 2 == 0 else chr(s.pop()),end="") #write to output and convert to ASCII if needed
-            if i == "jump": pc = p.index(("label",a)) if s.pop() else pc #pop and jump if not 0
+            if i == "jump": pc = p.index(('label',a)) if s.pop() else pc #pop and jump if not 0
             pc += 1
         print("\n\nExecution finished.")
     def parse(src):
