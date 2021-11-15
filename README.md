@@ -1,6 +1,6 @@
-# Nightwatch
+# Nightwatch ✨
 
-✨ A minimalist interpreter for [Starry](https://esolangs.org/wiki/starry) written in Python ✨
+A minimalist interpreter for [Starry](https://esolangs.org/wiki/starry) written in Python
 
 ```
         + + +* +  * + + +* + .*
