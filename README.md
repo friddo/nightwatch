@@ -1,4 +1,4 @@
-# Starstruck
+# Nightwatch
 
 A minimalist interpreter for [Starry](https://esolangs.org/wiki/starry) written in Python
 
@@ -66,4 +66,4 @@ etc.
 
 ## Credits
 
-Yutaka Hara for inventing Starry and providing reference sourcecode for the original [Ruby interpreter](https://github.com/yhara/esolang-book-sources/tree/master/starry)
+Thanks to Yutaka Hara for inventing Starry and providing reference sourcecode for the original [Ruby implementation](https://github.com/yhara/esolang-book-sources/tree/master/starry)
