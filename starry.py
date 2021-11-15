@@ -7,17 +7,17 @@ class starry():
             i,a = p[pc] if isinstance(p[pc], tuple) else (p[pc],None)
             if i == "push": s.append(a)
             if i == "dup" : s.append(s[-1])
-            if i == "swap": s = s[:-2]+s[-1:]+s[-2:-1]
-            if i == "rot" : s = s[:-3]+s[-1:]+s[-3:-1]
+            if i == "swap": s[-2:] = reversed(s[-2:]) #swap 2 last elements of array
+            if i == "rot" : s[-3:] = s[-1:]+s[-3:-1] #rotate last 3 elements of array (1,2,3,4) -> (1,4,2,3)
             if i == "pop" : s.pop()
-            if i == "+"   : s = s[:-2] + [s[-2]+s[-1]]
-            if i == "-"   : s = s[:-2] + [s[-2]-s[-1]]
-            if i == "*"   : s = s[:-2] + [s[-2]*s[-1]]
-            if i == "/"   : s = s[:-2] + [int(s[-2]/s[-1])]
-            if i == "%"   : s = s[:-2] + [s[-2]%s[-1]]
+            if i == "+"   : s[-2:] = [sum(s[-2:])] #merge 2 last elements with addition
+            if i == "-"   : s[-2:] = [s[-2]-s[-1]] #merge 2 last elements with subtraction
+            if i == "*"   : s[-2:] = [s[-2]*s[-1]] #merge 2 last elements with multiplication
+            if i == "/"   : s[-2:] = [int(s[-2]/s[-1])] #merge 2 last elements with division
+            if i == "%"   : s[-2:] = [s[-2]%s[-1]] #merge 2 last elements with modulus
             if i == "in"  : s.append(int(input()) if a % 2 == 0 else ord(input()))
             if i == "out" : print(int(s.pop()) if a % 2 == 0 else chr(s.pop()),end="")
-            if i == "jump": pc = p.index(("label",a))
+            if i == "jump": pc = p.index(("label",a)) if s.pop() != 0
             pc += 1
         print("\n\nExecution finished.")
     def parse(src):
