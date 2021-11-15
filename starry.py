@@ -21,7 +21,7 @@ class starry():
             pc += 1
         print("\n\nExecution finished.")
     def parse(src):
-        OP_STACK, OP_CALC = ["nop", "dup", "swap", "rot", "pop"], ["+", "-", "*", "/", "%"]
+        OP_STACK, OP_CALC = ["nop", "dup", "swap", "rot", "pop"], "+-*/%"
         i, spaces = [], 0
         for c in src:
             if c != " ":
