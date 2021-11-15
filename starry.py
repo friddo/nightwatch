@@ -4,7 +4,7 @@ class starry():
     def run(parsed):
         p,s,pc = parsed, [], 0
         while pc < len(p):
-            i,a = p[pc] if isinstance(p[pc], tuple) else (p[pc],None)
+            i,a = p[pc]
             if i == "push": s.append(a)
             if i == "dup" : s.append(s[-1])
             if i == "swap": s[-2:] = reversed(s[-2:]) #swap 2 last elements of array
@@ -15,9 +15,9 @@ class starry():
             if i == "*"   : s[-2:] = [s[-2]*s[-1]] #merge 2 last elements with multiplication
             if i == "/"   : s[-2:] = [int(s[-2]/s[-1])] #merge 2 last elements with division
             if i == "%"   : s[-2:] = [s[-2]%s[-1]] #merge 2 last elements with modulus
-            if i == "in"  : s.append(int(input()) if a % 2 == 0 else ord(input()))
-            if i == "out" : print(int(s.pop()) if a % 2 == 0 else chr(s.pop()),end="")
-            if i == "jump": pc = p.index(("label",a)) if s.pop() != 0
+            if i == "in"  : s.append(int(input()) if a % 2 == 0 else ord(input())) #read input and convert to ASCII if needed
+            if i == "out" : print(int(s.pop()) if a % 2 == 0 else chr(s.pop()),end="") #write to output and convert to ASCII if needed
+            if i == "jump": pc = p.index(("label",a)) if a.pop() else pc #pop and jump if not 0
             pc += 1
         print("\n\nExecution finished.")
     def parse(src):
@@ -25,8 +25,8 @@ class starry():
         i, spaces = [], 0
         for c in src:
             if c != " ":
-                if c == "+": i.append(starry.select(OP_STACK, spaces) if spaces < len(OP_STACK) else ("push",spaces - len(OP_STACK)))
-                if c == "*": i.append((starry.select(OP_CALC, spaces)))
+                if c == "+": i.append((OP_STACK[spaces % 5],None) if spaces < 5 else ("push",spaces - 5))
+                if c == "*": i.append((OP_CALC[spaces % 5],None))
                 if c == ".": i.append(("out",spaces))
                 if c == ",": i.append(("in",spaces))
                 if c == "`": i.append(("label",spaces))
