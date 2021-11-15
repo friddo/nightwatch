@@ -13,7 +13,14 @@ A minimalist interpreter for [Starry](https://esolangs.org/wiki/starry) written 
 
 ## Getting started
 
+Download `starry.py` or clone the repo to your local disc.
 
+Run the script with:
+```
+$ ./starry.py [filename]
+```
+
+Script will throw generic Python errors, if file contains invalid code
 
 
 ## Examples
