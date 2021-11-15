@@ -22,6 +22,10 @@ $ ./starry.py [filename]
 
 Script will throw generic Python errors, if file contains invalid code
 
+### Whitespace 
+
+* **Since Starry programs utilize whitespace for instruction parsing, extra caution is needed when copying or modifying code.**
+
 
 ## Examples
 
