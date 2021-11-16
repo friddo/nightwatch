@@ -117,7 +117,14 @@ output:
 ```
 720
 ```
+## To Do
 
+* Command line arguments
+  * verbose
+  * delay
+  * initial stack setup
+* Support for an interactive debugger
+  * program view, stack view
 ## Credits
 
 Thanks to Yutaka Hara for inventing Starry and providing reference sourcecode for the original [Ruby implementation](https://github.com/yhara/esolang-book-sources/tree/master/starry)
