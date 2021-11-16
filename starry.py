@@ -35,9 +35,7 @@ class starry():
             elif c == " ":
                 spaces += 1
         return i
-    def select(ops, n):
-        return ops[n % len(ops)]
-
+        
 def main():
   if len(sys.argv) == 2:
       file = open(sys.argv[1])
