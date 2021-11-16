@@ -15,17 +15,22 @@ A minimalist interpreter for [Starry](https://esolangs.org/wiki/starry) written 
 
 Download `starry.py` or clone the repo to your local disc.
 
+### Running code
+
 Run the script with:
 ```
 $ ./starry.py [filename]
 ```
 
-Script will throw generic Python errors, if file contains invalid code
+Script will throw generic Python errors, if file contains invalid code.
 
-### Whitespace 
+### Compiler
 
-* **Since Starry programs utilize whitespace for instruction parsing, extra caution is needed when copying or modifying code.**
+A future compiler will allow for compilation of a custom assembly code format, to .sta files
 
+#### About whitespace 
+Since Starry programs utilize whitespace for instruction parsing, extra caution is needed when copying or modifying code.  
+Ensure that your editor doesnt erase trailing spaces.
 
 ## Examples
 
@@ -49,7 +54,7 @@ Hello, World!
 ```
 
 #### A000252 Sequence
-Calculates the n-th term of the [OEIS A000252](https://oeis.org/A000252) sequence.
+Calculates the n-th term of the [OEIS A000252](https://oeis.org/A000252) sequence.  
 Made by user "Not a tree" on the [codegolf stackexchange forum](https://codegolf.stackexchange.com/a/135269) 
 
 file:
