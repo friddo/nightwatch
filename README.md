@@ -31,9 +31,10 @@ Script will throw generic Python errors, if file contains invalid code
 
 Small examples to demonstrate
 
-### Hello World
+#### Hello World
+Codegolf-ed solution to the `Hello, World!` problem.
 
-input:
+file:
 ```
         + + +* +  * + + +* + .*
  +         + +* * +      +* .
@@ -47,9 +48,40 @@ output:
 Hello, World!
 ```
 
-### Fibonacci
+#### A000252 Sequence
+Calculates the n-th term of the [OEIS A000252](https://oeis.org/A000252) sequence.
+Made by user "Not a tree" on the [codegolf stackexchange forum](https://codegolf.stackexchange.com/a/135269) 
 
+file:
+```
+, +      + *     '.     `
+ + + + +  *  *  *  +     
+ +`      +*       +    ` 
+ + +   +  + +   + *  '   
+   +   '  ####`  + +   + 
+ + +    ####  +*   +    *
+    '  #####  +      + ' 
+  `    ######+  + +   +  
++ +   + #########   * '  
+ +   +  + #####+ +      +
+*  +      + * +  *  *   +
+   +  *  + + + +  *  *   
++   +  +   *   + `  + +  
+ +  + +   + *'    +    +.
+```
 input:
+```
+50
+```
+output:
+```
+1800000
+```
+
+#### Fibonacci
+Outputs the Fibonnaci sequence.
+
+file:
 ```
      +      + ` +   +     * +
   .               + . '
@@ -62,6 +94,23 @@ output:
 5
 8
 etc.
+```
+
+#### Factorial
+Computes the factorial of n
+
+file:
+```
+, + `      + * +   +
+  *  + +      + * '  +.
+```
+input:
+```
+6
+```
+output:
+```
+720
 ```
 
 ## Credits
