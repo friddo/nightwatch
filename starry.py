@@ -24,7 +24,7 @@ class starry():
         OP_STACK, OP_CALC = ["nop", "dup", "swap", "rot", "pop"], "+-*/%"
         i, spaces = [], 0
         for c in src:
-            if c != " ":
+            if c in "+*.,`'":
                 if c == "+": i.append((OP_STACK[spaces % 5],None) if spaces < 5 else ("push",spaces - 5))
                 if c == "*": i.append((OP_CALC[spaces % 5],None))
                 if c == ".": i.append(("out",spaces))
@@ -32,7 +32,7 @@ class starry():
                 if c == "`": i.append(("label",spaces))
                 if c == "'": i.append(("jump",spaces))
                 spaces = 0
-            else:
+            elif c == " ":
                 spaces += 1
         return i
     def select(ops, n):
