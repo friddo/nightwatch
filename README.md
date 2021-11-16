@@ -37,7 +37,7 @@ Ensure that your editor doesnt erase trailing spaces.
 Small examples to demonstrate
 
 #### Hello World
-Codegolf-ed solution to the `Hello, World!` problem.
+Codegolf-ed solution to the `Hello, World!` problem made by [Sp3000](https://codegolf.stackexchange.com/a/55526)
 
 file:
 ```
@@ -55,7 +55,7 @@ Hello, World!
 
 #### A000252 Sequence
 Calculates the n-th term of the [OEIS A000252](https://oeis.org/A000252) sequence.  
-Made by user "Not a tree" on the [codegolf stackexchange forum](https://codegolf.stackexchange.com/a/135269) 
+Made by [Not a tree](https://codegolf.stackexchange.com/a/135269) 
 
 file:
 ```
