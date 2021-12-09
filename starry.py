@@ -20,8 +20,9 @@ class starry():
             if i == "jump": pc = p.index(('label',a)) if s.pop() else pc #pop and jump if not 0
             pc += 1
         print("\n\nExecution finished.")
+        print(*s)
     def parse(src):
-        OP_STACK, OP_CALC = ["nop", "dup", "swap", "rot", "pop"], "+-*/%"
+        OP_STACK, OP_CALC = ["nop","dup","swap","rot","pop"], "+-*/%"
         i, spaces = [], 0
         for c in src:
             if c in "+*.,`'":
@@ -38,10 +39,10 @@ class starry():
         
 def main():
   if len(sys.argv) == 2:
-      file = open(sys.argv[1])
-      parsed = starry.parse(file.read())
-      #print(parsed,"\n")
-      starry.run(parsed)
+      with open(sys.argv[1]) as file:
+          parsed = starry.parse(file.read())
+          #print(parsed,"\n")
+          starry.run(parsed)
   else:
-      print("Usage:", sys.argv[0], "filename")
+      print(f'Usage: {sys.argv[0]} filename')
 if __name__ == "__main__": main()
