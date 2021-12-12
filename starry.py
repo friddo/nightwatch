@@ -14,7 +14,7 @@ class starry():
             elif i == "+"   : s[-2:] = [sum(s[-2:])] #merge 2 last elements with addition
             elif i == "-"   : s[-2:] = [s[-2]-s[-1]] #merge 2 last elements with subtraction
             elif i == "*"   : s[-2:] = [s[-2]*s[-1]] #merge 2 last elements with multiplication
-            elif i == "/"   : s[-2:] = [s[-2]//s[-1]] #merge 2 last elements with division
+            elif i == "/"   : s[-2:] = [s[-2]//s[-1]] #merge 2 last elements with division, no floating point
             elif i == "%"   : s[-2:] = [s[-2]%s[-1]] #merge 2 last elements with modulus
             elif i == "in"  : s.append(int(input()) if a % 2 == 0 else ord(input())) #read input and convert to ASCII if needed
             elif i == "out" : print(int(s.pop()) if a % 2 == 0 else chr(s.pop()),end="") #write to output and convert to ASCII if needed
