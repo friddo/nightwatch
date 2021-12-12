@@ -5,24 +5,23 @@ class starry():
         p,s,pc = parsed, [], 0
         while pc < len(p):
             i,a = p[pc]
-            if i == "push": s.append(a)
-            if i == "dup" : s.append(s[-1])
+            if i == "push": s.append(a) #append argument to stack
+            if i == "dup" : s.append(s[-1]) #duplicate top element of stack
             if i == "swap": s[-2:] = reversed(s[-2:]) #swap 2 last elements of array
             if i == "rot" : s[-3:] = s[-1:]+s[-3:-1] #rotate last 3 elements of array (1,2,3,4) -> (1,4,2,3)
-            if i == "pop" : s.pop()
+            if i == "pop" : s.pop() #pop an element from stack
             if i == "+"   : s[-2:] = [sum(s[-2:])] #merge 2 last elements with addition
             if i == "-"   : s[-2:] = [s[-2]-s[-1]] #merge 2 last elements with subtraction
             if i == "*"   : s[-2:] = [s[-2]*s[-1]] #merge 2 last elements with multiplication
-            if i == "/"   : s[-2:] = [int(s[-2]/s[-1])] #merge 2 last elements with division
+            if i == "/"   : s[-2:] = [s[-2]//s[-1]] #merge 2 last elements with division
             if i == "%"   : s[-2:] = [s[-2]%s[-1]] #merge 2 last elements with modulus
             if i == "in"  : s.append(int(input()) if a % 2 == 0 else ord(input())) #read input and convert to ASCII if needed
             if i == "out" : print(int(s.pop()) if a % 2 == 0 else chr(s.pop()),end="") #write to output and convert to ASCII if needed
             if i == "jump": pc = p.index(('label',a)) if s.pop() else pc #pop and jump if not 0
             pc += 1
         print("\n\nExecution finished.")
-        print(*s)
     def parse(src):
-        OP_STACK, OP_CALC = ["nop","dup","swap","rot","pop"], "+-*/%"
+        OP_STACK, OP_CALC = ["nop","dup","swap","rot","pop"], "+-*/%" #index for stack operations, and math operations
         i, spaces = [], 0
         for c in src:
             if c in "+*.,`'":
@@ -41,7 +40,7 @@ def main():
   if len(sys.argv) == 2:
       with open(sys.argv[1]) as file:
           parsed = starry.parse(file.read())
-          #print(parsed,"\n")
+          #for c in parsed: print(c)
           starry.run(parsed)
   else:
       print(f'Usage: {sys.argv[0]} filename')
