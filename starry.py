@@ -5,7 +5,7 @@ class starry():
         p,s,pc = parsed, [], 0
         while pc < len(p):
             i,a = p[pc] #separate parsed commands into op-code and arguments
-            if not isinstance(a, int) and a is not None: raise ValueError(f'Argument is not int or None, got: {a}') #if argument is not empty or an int
+            if not isinstance(a, int) and a is not None: raise ValueError(f'Argument is not of type int or None, got: {a}') #if argument is not empty or an int
             if   i == "push": s.append(a) #append argument to stack
             elif i == "dup" : s.append(s[-1]) #duplicate top element of stack
             elif i == "swap": s[-2:] = reversed(s[-2:]) #swap 2 last elements of array
